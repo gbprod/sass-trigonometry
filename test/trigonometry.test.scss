@@ -1,0 +1,98 @@
+$inspect: true;
+@import 'true';
+@import '../trigonometry.scss';
+
+@function fix-precision($number) {
+    @return round($number * 10000) / 10000;
+}
+
+@include describe('pi is a constant') {
+  @include it('should return PI value') {
+    @include assert-equal(pi(), 3.14159265359);
+  }
+}
+
+@include describe('radian to degres conversion') {
+  @include it('should convert degres to radian') {
+    @include assert-equal(fix-precision(deg-to-rad(45)), 0.7854);
+    @include assert-equal(fix-precision(deg-to-rad(60)), 1.0472);
+  }
+  @include it('should convert radian to degres') {
+    @include assert-equal(round(rad-to-deg(0.7854)), 45);
+    @include assert-equal(round(rad-to-deg(1.0472)), 60);
+  }
+}
+
+@include describe('power') {
+  @include it('should positive power a number') {
+    @include assert-equal(pow(4, 2), 16);
+    @include assert-equal(pow(6, 5), 7776);
+  }
+  @include it('should negative power a number') {
+    @include assert-equal(pow(100, -1), 0.01);
+    @include assert-equal(pow(10, -4), 0.0001);
+  }
+}
+
+@include describe('factorize') {
+  @include it('should factorize') {
+    @include assert-equal(fact(4), 24);
+    @include assert-equal(fact(10), 3628800);
+  }
+  @include it('should negative power a number') {
+    @include assert-equal(pow(100, -1), 0.01);
+    @include assert-equal(pow(10, -4), 0.0001);
+  }
+}
+
+@include describe('square root') {
+  @include it('should square root') {
+    @include assert-equal(sqrt(25), 5);
+    @include assert-equal(fix-precision(sqrt(10)), 3.1623);
+  }
+}
+
+@include describe('sinuse') {
+  @include it('should calculate sinuse') {
+    @include assert-equal(fix-precision(sin(45deg)), 0.7071);
+    @include assert-equal(fix-precision(sin(75)), 0.9659);
+  }
+}
+
+@include describe('cosinuse') {
+  @include it('should calculate cosinuse') {
+    @include assert-equal(fix-precision(cos(45)), 0.7071);
+    @include assert-equal(fix-precision(cos(75deg)), 0.2588);
+  }
+}
+
+@include describe('tangent') {
+  @include it('should calculate tangent') {
+    @include assert-equal(fix-precision(tan(45deg)), 1.0000);
+    @include assert-equal(fix-precision(tan(75)), 3.7321);
+  }
+}
+
+@include describe('arc sinuse') {
+  @include it('should calculate arc sinuse') {
+    @include assert-equal(round(asin(0.7071)), 45);
+    @include assert-equal(round(asin(0.9659)), 75);
+  }
+}
+
+@include describe('arc cosinuse') {
+  @include it('should calculate arc cosinuse') {
+    @include assert-equal(round(acos(0.7071)), 45);
+    @include assert-equal(round(acos(0.2588)), 75);
+  }
+}
+
+@include describe('arc tangent') {
+  @include it('should calculate arc tangent') {
+    @include assert-equal(round(atan(1)), 45);
+    @include assert-equal(round(atan(3.7321)), 75);
+  }
+}
+
+
+

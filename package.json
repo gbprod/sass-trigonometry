@@ -1,0 +1,37 @@
+{
+  "name": "sass-trigonometry",
+  "version": "0.0.1",
+  "description": "Sass trigonometry and inverse trigonometry functions.",
+  "main": "trigonometry.scss",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbprod/sass-trigonometry.git"
+  },
+  "keywords": [
+    "sass",
+    "triginometry",
+    "cos",
+    "sin",
+    "tan",
+    "acos",
+    "asin",
+    "atan",
+    "arccos",
+    "arcsin",
+    "arctan"
+  ],
+  "author": "gbprod",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/gbprod/sass-trigonometry/issues"
+  },
+  "homepage": "https://github.com/gbprod/sass-trigonometry#readme",
+  "devDependencies": {
+    "mocha": "^6.2.2",
+    "node-sass": "^4.13.0",
+    "sass-true": "^5.0.0"
+  }
+}
