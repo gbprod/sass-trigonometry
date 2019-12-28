@@ -1,6 +1,6 @@
 {
   "name": "sass-trigonometry",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Sass trigonometry and inverse trigonometry functions.",
   "main": "trigonometry.scss",
   "scripts": {
